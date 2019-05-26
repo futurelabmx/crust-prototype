@@ -10,8 +10,8 @@ extern "C" {
 
 fn main() {
     // Get the current arguments  and map them into a vector
-    let args: Vec<Cstring> = env::args().filter_map(|arg| {
-        CString::new(arg).ok
+    let args: Vec<CString> = env::args().filter_map(|arg| {
+        CString::new(arg).ok()
     }).collect();
 
     // Convertir las CStrings a apuntadores
